@@ -7,7 +7,6 @@ import { routing } from './routes';
 
 // Components
 import { RootComponent } from './routes/root/root.component';
-import { UserFormComponent } from './components/user-form/user-form.component';
 
 // Route State Management
 import {
@@ -21,7 +20,7 @@ export const storeName = 'route-UIState'; // Change this property to be unique &
 
 @NgModule({
   imports: [CommonModule, SiteModule, routing],
-  declarations: [RootComponent, UserFormComponent],
+  declarations: [RootComponent],
   providers: [
     RouteUiStateService,
     RouteUiStateStore,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UiStateStore } from './ui-state.store';
 import { UiStateQuery } from './ui-state.query';
-import { map, distinctUntilChanged, filter } from 'rxjs/operators';
+import { map, distinctUntilChanged, filter, debounceTime } from 'rxjs/operators';
 import { merge } from 'rxjs';
 import { ConfirmationService } from 'primeng/api';
 import { SwUpdate } from '@angular/service-worker';
@@ -9,6 +9,7 @@ import {
   NtsServiceWorkerService,
   NtsVersionManagementService,
 } from '$services';
+import {FormBuilder } from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
 export class UiStateService {
@@ -17,6 +18,12 @@ export class UiStateService {
     this.ntsSw.updateAvailable$,
     this.ntsVersion.updateAvailable$,
   );
+
+  public form1003 = this.fb.group({
+    email: '',
+    nameFirst: '',
+    nameLast: ''
+  });
 
   /** State of current UI store */
   public uiState$ = this.query.select();
@@ -45,11 +52,14 @@ export class UiStateService {
     private sw: SwUpdate,
     private ntsSw: NtsServiceWorkerService,
     private ntsVersion: NtsVersionManagementService,
+    private fb: FormBuilder
   ) {
     // this.query.uiState$.subscribe(state => console.log('UI STATE', state));
     this.updateAvailable$
       .pipe(filter(val => val))
       .subscribe(() => this.updateAppModal());
+
+      this.form1003.valueChanges.pipe(debounceTime(500)).subscribe(form => this.toggles('form', form));
   }
 
   /**

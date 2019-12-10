@@ -102,7 +102,7 @@
           "options": {
             "browserTarget": "angular-starter:build",
             "aot": true,
-            "port": 4200
+            "port": 4219
           },
           "configurations": {
             "production": {

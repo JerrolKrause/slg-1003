@@ -43,15 +43,16 @@ export class NavComponent {
       routerLinkActiveOptions: { exact: true },
     },
     {
-      label: 'Demo Route',
+      label: 'Purchase',
       icon: 'fa fa-cubes mr-1',
-      routerLink: '/route',
+      routerLink: '/purchase',
     },
     {
-      label: 'QA',
-      icon: 'fa fa-question-circle',
-      routerLink: '/qa',
+      label: 'Refinance',
+      icon: 'fa fa-cubes mr-1',
+      routerLink: '/refinance',
     },
+   
   ];
 
   public utilityMenu: MenuItem[] = [
