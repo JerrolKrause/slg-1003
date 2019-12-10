@@ -67,7 +67,7 @@ import {
 } from '$shared';
 
 // Non-lazy loaded routes
-import { LoginComponent, NoContentComponent } from '$routes';
+import { NoContentComponent } from '$routes';
 import { SiteModule } from '$site';
 
 // Components
@@ -75,7 +75,6 @@ export const APP_COMPONENTS = [
   // App component
   AppComponent,
   // Routes
-  LoginComponent,
   NoContentComponent,
 ];
 

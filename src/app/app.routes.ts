@@ -1,17 +1,12 @@
 import { Routes } from '@angular/router';
-import { NoContentComponent, LoginComponent } from '$routes'; // HomeComponent,
+import { NoContentComponent } from '$routes'; // HomeComponent,
 
 import { LayoutMainComponent } from '$components';
 import { AuthGuard } from '$shared';
 
 export const ROUTES: Routes = [
   // Routes without masterpage or that do not need to be authenticated need to go first
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: { title: 'Please Log In' },
-  },
-
+  
   // Example route param
   // {
   //  path: 'loan/:LNKey',
@@ -47,20 +42,28 @@ export const ROUTES: Routes = [
         canActivate: [AuthGuard],
       },
 
+      {
+        path: 'purchase',
+        pathMatch: 'full',
+        loadChildren: () =>
+          import('./routes/purchase/route.module').then(m => m.PurchaseModule),
+        canActivate: [AuthGuard],
+      },
+
+      {
+        path: 'refinance',
+        pathMatch: 'full',
+        loadChildren: () =>
+          import('./routes/refinance/route.module').then(m => m.RefinanceModule),
+        canActivate: [AuthGuard],
+      },
+
       // Empty path string for homepage ('') needs to be LAST otherwise it catches all other routes
       {
         path: '',
         pathMatch: 'full',
         loadChildren: () =>
           import('./routes/home/home.module').then(m => m.HomeModule),
-        canActivate: [AuthGuard],
-      },
-
-      {
-        path: 'qa',
-        loadChildren: () =>
-          import('./routes/qa/qa.module').then(m => m.QaModule),
-        data: { title: 'E2E Testing' },
         canActivate: [AuthGuard],
       },
 
