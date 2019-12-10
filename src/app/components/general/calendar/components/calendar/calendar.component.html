@@ -1,0 +1,12 @@
+<full-calendar
+  #fc
+  [defaultView]="defaultView"
+  [events]="events"
+  [height]="height"
+  [header]="header"
+  [plugins]="calendarPlugins"
+  [selectable]="selectable"
+  (dateClick)="dateClick($event)"
+  (eventClick)="eventClick($event)"
+  (select)="select($event)"
+></full-calendar>
