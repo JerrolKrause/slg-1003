@@ -7,6 +7,7 @@ import {
   filter,
   debounceTime,
   startWith,
+  take,
 } from 'rxjs/operators';
 import { merge } from 'rxjs';
 import { ConfirmationService } from 'primeng/api';
@@ -17,6 +18,7 @@ import {
 } from '$services';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class UiStateService {
@@ -82,6 +84,7 @@ export class UiStateService {
     private ntsVersion: NtsVersionManagementService,
     private fb: FormBuilder,
     private router: Router,
+    private http: HttpClient,
   ) {
     // this.query.uiState$.subscribe(state => console.log('UI STATE', state));
     this.updateAvailable$
@@ -92,7 +95,11 @@ export class UiStateService {
       .pipe(debounceTime(500))
       .subscribe(form => this.toggles('form', form));
 
-    this.store.reset();
+    this.query
+      .select()
+      .pipe(take(1))
+      .subscribe(form => this.form1003.patchValue(form));
+
     this.query.select().subscribe(res => console.log(res));
   }
 
@@ -127,19 +134,32 @@ export class UiStateService {
     let routePrevious: { path?: string; formProps?: string[] | null } = {};
     // Update the store properties
     this.store.update(store => {
-      routePrevious = store.path[store.path.length - 1];
-
-      return {
-        ...store,
-        formData: this.form1003.value,
-        pageCounter: store.pageCounter - 1,
-        path: [...store.path],
-      };
+      // Remove the last item from the path
+      const pathNew = [...store.path].slice(0, -1); //
+      // Get the new last item
+      routePrevious = pathNew[pathNew.length - 1];
+      if (routePrevious && routePrevious.path) {
+        this.router.navigate([routePrevious.path]);
+        return {
+          ...store,
+          formData: this.form1003.value,
+          pageCounter: store.pageCounter - 1,
+          path: pathNew,
+        };
+      }
+      return store;
     });
-    if (routePrevious && routePrevious.path) {
-      // Go to next route
-      this.router.navigate([routePrevious.path]);
-    }
+  }
+
+  /**
+   * Submit a lead to the backend
+   * @param lead
+   */
+  public leadSubmit(lead: any) {
+    this.http.post('/api/somewhere', lead).subscribe(() => {
+      this.form1003.reset();
+      window.location.href = '/?src=1003';
+    });
   }
 
   /**
