@@ -1,0 +1,37 @@
+#main-content {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+.slide-title {
+  margin: 72px 0 83px;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 3.2rem;
+}
+
+.btn {
+  &.btn-slg {
+    margin: 0 20px 20px;
+    border: 2px solid #7a7a7a;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    min-height: 274px;
+    width: 285px;
+    box-shadow: inset 0px -8px #7a7a7a, 0px 6px #b9bdbe;
+    &:hover {
+      background: #b2ebf2;
+      box-shadow: inset 0px -6px #7a7a7a, 0px 5px #b9bdbe;
+    }
+    img {
+      margin-bottom: 15px;
+    }
+    span{
+      display:block;
+    }
+  }
+}
