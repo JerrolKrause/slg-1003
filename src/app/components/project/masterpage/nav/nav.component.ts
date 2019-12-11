@@ -82,7 +82,7 @@ export class NavComponent {
   constructor(
     private auth: AuthService,
     private settings: SettingsService,
-    private ui: UiStateService,
+    public ui: UiStateService,
     private router: Router,
   ) {
     // On route change, if mobile nav is open close it
