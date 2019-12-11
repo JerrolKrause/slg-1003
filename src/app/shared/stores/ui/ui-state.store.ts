@@ -7,7 +7,7 @@ export function createInitialState(): UIState {
     toggles: {},
     formData: {},
     path: [{ path: '/', formProps: null }],
-    pageCounter: 1,
+    pageCounter: 0,
   };
 }
 

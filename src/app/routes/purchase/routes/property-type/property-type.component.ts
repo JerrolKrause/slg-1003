@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { UiStateService } from '$ui';
 
 @Component({
   selector: 'app-property-type',
@@ -8,7 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class PropertyTypeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public ui: UiStateService) { }
 
   ngOnInit() {
   }

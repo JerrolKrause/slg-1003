@@ -44,7 +44,6 @@ export const ROUTES: Routes = [
 
       {
         path: 'purchase',
-        pathMatch: 'full',
         loadChildren: () =>
           import('./routes/purchase/route.module').then(m => m.PurchaseModule),
         canActivate: [AuthGuard],
@@ -52,7 +51,6 @@ export const ROUTES: Routes = [
 
       {
         path: 'refinance',
-        pathMatch: 'full',
         loadChildren: () =>
           import('./routes/refinance/route.module').then(m => m.RefinanceModule),
         canActivate: [AuthGuard],

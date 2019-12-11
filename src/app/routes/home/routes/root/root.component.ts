@@ -31,7 +31,9 @@ export class RootComponent implements OnInit, OnDestroy {
   // private routeUIState: RouteUiStateService, // Route only UI state
   // private settings: SettingsService, // App settings/global properties
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.ui.reset();
+  }
 
   /** Must be present even if not used for autounsub */
   ngOnDestroy() {}
