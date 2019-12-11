@@ -24,6 +24,7 @@ import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { TooltipModule } from 'primeng/tooltip';
 import { ToastModule } from 'primeng/toast';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 const modules = [
   // Prime NG UI Lib
@@ -44,6 +45,7 @@ const modules = [
   DropdownModule,
   TooltipModule,
   ToastModule,
+  ProgressBarModule,
 ];
 
 @NgModule({

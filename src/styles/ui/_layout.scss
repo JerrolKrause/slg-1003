@@ -3,6 +3,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #484f59;
   background-color: $grey;
+  .ui-progressbar{border-radius:0;height:7px;
+    .ui-progressbar-value{background-color:#d92129;}
+  }
 }
 .ui-container {
   max-width: 1280px;

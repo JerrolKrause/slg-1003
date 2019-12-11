@@ -37,7 +37,7 @@ import { NameComponent } from './routes/name/name.component';
 import { EmailComponent } from './routes/email/email.component';
 import { FinalizeComponent } from './routes/finalize/finalize.component';
 
-export const storeName = 'route-UIState'; // Change this property to be unique & route specific, IE 'route-UIState' => 'dashboard-UIState'
+export const storeName = 'purchase-UIState'; 
 
 @NgModule({
   imports: [CommonModule, SiteModule, routing],

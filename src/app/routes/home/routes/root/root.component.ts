@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   OnDestroy,
 } from '@angular/core';
+import { UiStateService } from '$ui';
 // import { untilDestroyed } from 'ngx-take-until-destroy';
 
 // Global state
@@ -22,7 +23,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RootComponent implements OnInit, OnDestroy {
-  constructor() {}
+
+  constructor(public ui: UiStateService) {}
   // private domainState: DomainService, // Global domain state
   // public uiState: UiStateService, // Global UI state
   // private routeDomainState: RouteDomainStateService, // Route only domain state

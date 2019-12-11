@@ -5,6 +5,9 @@ export function createInitialState(): UIState {
   return {
     tabsActive: {},
     toggles: {},
+    formData: {},
+    path: [{ path: '/', formProps: null }],
+    pageCounter: 1,
   };
 }
 
