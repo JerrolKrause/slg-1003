@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '$shared';
 import { Router, NavigationEnd } from '@angular/router';
 import {
@@ -22,8 +22,6 @@ const toLower = require('lodash/toLower');
   selector: 'app-nav',
   styleUrls: ['./nav.component.scss'],
   templateUrl: './nav.component.html',
-  // tslint:disable-next-line:use-component-view-encapsulation
-  encapsulation: ViewEncapsulation.None,
 })
 export class NavComponent {
   /** Is the dropdown menu open on mobile */
@@ -37,35 +35,35 @@ export class NavComponent {
 
   public navMenu: MenuItem[] = [
     {
-      label: 'Home',
-      icon: 'fa fa-tachometer mr-1',
+      label: 'Back',
+      icon: 'fa fa-chevron-left mr-1',
       routerLink: '/',
       routerLinkActiveOptions: { exact: true },
     },
-    {
-      label: 'Purchase',
-      icon: 'fa fa-cubes mr-1',
-      routerLink: '/purchase',
-    },
-    {
-      label: 'Refinance',
-      icon: 'fa fa-cubes mr-1',
-      routerLink: '/refinance',
-    },
-   
+    // {
+    //   label: 'Purchase',
+    //   icon: 'fa fa-cubes mr-1',
+    //   routerLink: '/purchase',
+    // },
+    // {
+    //   label: 'Refinance',
+    //   icon: 'fa fa-cubes mr-1',
+    //   routerLink: '/refinance',
+    // },
+
   ];
 
   public utilityMenu: MenuItem[] = [
     {
-      label: 'Version 1.0.0.5',
-      icon: 'fa fa-tachometer mr-1',
-      disabled: true,
+      label: 'Call us at (800) 000-0000',
+      // icon: 'fa fa-tachometer mr-1',
+      // disabled: true,
     },
-    {
-      label: 'Sign Out',
-      icon: 'fa fa-cubes mr-1',
-      command: () => this.logOut(),
-    },
+    // {
+    //   label: 'Sign Out',
+    //   icon: 'fa fa-cubes mr-1',
+    //   command: () => this.logOut(),
+    // },
   ];
 
   public sidebarVisible = false;

@@ -1,5 +1,5 @@
 //main color scheme
-$primaryColor:#007ad9;
+$primaryColor:#0288d1;
 $primaryDarkColor:#116fbf;
 $primaryDarkerColor:#005b9f;
 $primaryTextColor:#ffffff;
@@ -473,20 +473,20 @@ $progressBarBgColor:#eaeaea;
 $progressBarValueBgColor:$primaryColor;
 
 //menu (e.g. menu, menubar, tieredmenu)
-$menuBgColor:#ffffff;
-$menuBorder:1px solid #c8c8c8;
+$menuBgColor:#0288d1;
+$menuBorder:0 none;
 $menuPadding:0;
-$menuTextColor:$textColor;
+$menuTextColor:$primaryTextColor;
 $menuitemPadding:0.714em 0.857em;
 $menuitemMargin:0;
-$menuitemTextColor:#333333;
-$menuitemIconColor:#333333;
-$menuitemHoverTextColor:#333333;
-$menuitemHoverIconColor:#333333;
-$menuitemHoverBgColor:#eaeaea;
-$menuitemActiveTextColor:#333333;
-$menuitemActiveIconColor:#333333;
-$menuitemActiveBgColor:#eaeaea;
+$menuitemTextColor:$primaryTextColor;
+$menuitemIconColor:$primaryTextColor;
+$menuitemHoverTextColor:$primaryTextColor;
+$menuitemHoverIconColor:$primaryTextColor;
+$menuitemHoverBgColor:transparent;
+$menuitemActiveTextColor:$primaryTextColor;
+$menuitemActiveIconColor:$primaryTextColor;
+$menuitemActiveBgColor:transparent;
 $submenuHeaderMargin: 0;
 $submenuPadding: 0;
 $overlayMenuBorder:1px solid #c8c8c8;
