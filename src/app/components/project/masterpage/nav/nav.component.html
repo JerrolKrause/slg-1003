@@ -1,14 +1,22 @@
 <div class="container-fluid">
   <div class="row">
     <div class="d-none d-md-flex col-md-4 align-items-center">
-      <a href="#">
-        <i class="fa fa-chevron-left mr-1"></i> Back
+      <ng-container *ngIf="ui.progressPercent$ | async as progress">
+        <a *ngIf="progress > 0" (click)="ui.routeBack()">
+          <i class="fa fa-chevron-left mr-1"></i> Back
+        </a>
+      </ng-container>
+    </div>
+    <div
+      class="col-12 col-md-4 d-flex justify-content-center align-items-center"
+    >
+      <a routerLink="/">
+        <img src="/assets/images/main-nav-logo.png" />
       </a>
     </div>
-    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
-      <img src="/assets/images/main-nav-logo.png">
-    </div>
-    <div class="col-12 col-md-4 d-flex mt-3 mt-md-0 justify-content-center justify-content-md-end align-items-center">
+    <div
+      class="col-12 col-md-4 d-flex mt-3 mt-md-0 justify-content-center justify-content-md-end align-items-center"
+    >
       Call us at (800) 000-0000
     </div>
   </div>
