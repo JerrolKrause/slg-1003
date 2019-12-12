@@ -25,6 +25,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { TooltipModule } from 'primeng/tooltip';
 import { ToastModule } from 'primeng/toast';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { InputTextModule } from 'primeng/inputtext';
 
 const modules = [
   // Prime NG UI Lib
@@ -36,6 +37,7 @@ const modules = [
   ConfirmDialogModule,
   DynamicDialogModule,
   CardModule,
+  InputTextModule,
 
   MessagesModule,
   MessageModule,
