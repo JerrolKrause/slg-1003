@@ -33,6 +33,8 @@ export class UiStateService {
     email: null,
     nameFirst: null,
     nameLast: null,
+    propertyUsage: null,
+    propertyType: null
   });
 
   public progressPercent$ = this.query
@@ -95,10 +97,11 @@ export class UiStateService {
       .pipe(debounceTime(500))
       .subscribe(form => this.toggles('form', form));
 
+      // Rehydrate the form with any saved data
     this.query
       .select()
       .pipe(take(1))
-      .subscribe(form => this.form1003.patchValue(form));
+      .subscribe(state => this.form1003.patchValue(state.formData));
 
     this.query.select().subscribe(res => console.log(res));
   }

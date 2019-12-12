@@ -1,13 +1,18 @@
+<h1 class="slide-title">How will this property be used?</h1>
 <div class="ui-container text-center">
     <div class="btn-group">
-      <button class="btn btn-slg ml-2" (click)="ui.routeGoTo('/purchase/property-location', { loanType: 'Purchase'})">
+      <button class="btn btn-slg ml-2" (click)="ui.routeGoTo('/purchase/property-location', { propertyUsage: 'Primary'})">
         <img src="assets/icons/purchase.png"/>
-        <span>Primary Residence</span>
+        <span>Primary Home</span>
       </button>
       <button class="btn btn-slg">
-        <img src="assets/icons/purchase.png"/>
-        <span>Party House</span>
+        <img src="assets/icons/purchase.png" (click)="ui.routeGoTo('/purchase/property-location', { propertyUsage: 'Secondary'})">
+        <span>Secondary Home</span>
       </button>
+      <button class="btn btn-slg">
+          <img src="assets/icons/purchase.png" (click)="ui.routeGoTo('/purchase/property-location', { propertyUsage: 'Rental'})">
+          <span>Rental Property</span>
+        </button>
     </div>
   </div>
   

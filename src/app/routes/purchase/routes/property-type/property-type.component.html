@@ -1,12 +1,25 @@
+<h1 class="slide-title">What type of property are you purchasing?</h1>
 <div class="ui-container text-center">
     <div class="btn-group">
-      <button class="btn btn-slg ml-2" (click)="ui.routeGoTo('/purchase/property-usage', { loanType: 'Purchase'})">
+      <button class="btn btn-slg ml-2" (click)="ui.routeGoTo('/purchase/property-usage', { propertyType: 'Purchase'})">
         <img src="assets/icons/purchase.png"/>
-        <span>Primary Home</span>
+        <span>Single Family Home</span>
       </button>
-      <button class="btn btn-slg">
+      <button class="btn btn-slg ml-2" (click)="ui.routeGoTo('/purchase/property-usage', { propertyType: 'Townhome'})">
         <img src="assets/icons/purchase.png"/>
-        <span>Secondary Home</span>
+        <span>Townhome</span>
+      </button>
+      <button class="btn btn-slg ml-2" (click)="ui.routeGoTo('/purchase/property-usage', { propertyType: 'Condominium'})">
+        <img src="assets/icons/purchase.png"/>
+        <span>Condominium</span>
+      </button>
+      <button class="btn btn-slg ml-2" (click)="ui.routeGoTo('/purchase/property-usage', { propertyType: 'Multi Family'})">
+        <img src="assets/icons/purchase.png"/>
+        <span>Multi Family Home</span>
+      </button>
+      <button class="btn btn-slg ml-2" (click)="ui.routeGoTo('/purchase/property-usage', { propertyType: 'Manufactured'})">
+        <img src="assets/icons/purchase.png"/>
+        <span>Manufactured or Mobile Home</span>
       </button>
     </div>
   </div>
