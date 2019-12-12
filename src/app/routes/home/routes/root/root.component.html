@@ -15,9 +15,9 @@
 <h1 class="slide-title">What is your current street address?</h1>
 <div class="ui-container text-center">
   <div class="mb-5">
-    <input type="text" pInputText class="input-slg" />
+    <input type="text" pInputText class="input-slg" [(ngModel)]="address" />
   </div>
   <div>
-    <button class="btn btn-slg-primary">Continue</button>
+    <button class="btn btn-slg-primary"(click)="ui.routeGoTo('/purchase/property-type', { address: address})">Continue</button>
   </div>
 </div>

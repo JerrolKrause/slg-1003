@@ -24,6 +24,8 @@ import { UiStateService } from '$ui';
 })
 export class RootComponent implements OnInit, OnDestroy {
 
+  public address = '';
+
   constructor(public ui: UiStateService) {}
   // private domainState: DomainService, // Global domain state
   // public uiState: UiStateService, // Global UI state

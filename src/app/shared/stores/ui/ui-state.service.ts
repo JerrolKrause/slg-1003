@@ -34,7 +34,8 @@ export class UiStateService {
     nameFirst: null,
     nameLast: null,
     propertyUsage: null,
-    propertyType: null
+    propertyType: null,
+    address:null
   });
 
   public progressPercent$ = this.query
