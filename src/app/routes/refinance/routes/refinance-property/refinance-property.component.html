@@ -1,0 +1,58 @@
+<h1 class="slide-title">Great! What type of property are you refinancing?</h1>
+<div class="ui-container text-center">
+  <div class="btn-group">
+    <button
+      class="btn btn-slg ml-2"
+      (click)="
+        ui.routeGoTo('/refinance/property-usage', {
+          propertyType: 'Single Family'
+        })
+      "
+    >
+      <img src="assets/icons/purchase.png" />
+      <span>Single Family Home</span>
+    </button>
+    <button
+      class="btn btn-slg ml-2"
+      (click)="
+        ui.routeGoTo('/refinance/property-usage', { propertyType: 'Townhome' })
+      "
+    >
+      <img src="assets/icons/purchase.png" />
+      <span>Townhome</span>
+    </button>
+    <button
+      class="btn btn-slg ml-2"
+      (click)="
+        ui.routeGoTo('/refinance/property-usage', {
+          propertyType: 'Condominium'
+        })
+      "
+    >
+      <img src="assets/icons/purchase.png" />
+      <span>Condominium</span>
+    </button>
+    <button
+      class="btn btn-slg ml-2"
+      (click)="
+        ui.routeGoTo('/refinance/property-usage', {
+          propertyType: 'Multi Family'
+        })
+      "
+    >
+      <img src="assets/icons/purchase.png" />
+      <span>Multi Family Home</span>
+    </button>
+    <button
+      class="btn btn-slg ml-2"
+      (click)="
+        ui.routeGoTo('/refinance/property-usage', {
+          propertyType: 'Manufactured'
+        })
+      "
+    >
+      <img src="assets/icons/purchase.png" />
+      <span>Manufactured or Mobile Home</span>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<h1 class="slide-title">Estimate your credit score</h1>
+<div class="ui-container vertical">
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/refinance/military', { creditProfile: 'Excellent' })
+    "
+  >
+    Excellent ≥720
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="ui.routeGoTo('/refinance/military', { creditProfile: 'Good' })"
+  >
+    Good 680 - 719
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="ui.routeGoTo('/refinance/military', { creditProfile: 'Fair' })"
+  >
+    Fair 640-679
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="ui.routeGoTo('/refinance/military', { creditProfile: 'Poor' })"
+  >
+    Poor ≤639
+  </button>
+</div>

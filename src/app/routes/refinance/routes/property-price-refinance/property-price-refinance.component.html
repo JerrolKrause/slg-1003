@@ -1,0 +1,26 @@
+<h1 class="slide-title">Estimation of the property value</h1>
+<h2 class="slide-subtitle">Irvine, CA USA.</h2>
+<div class="ui-container text-center">
+  <div class="mb-5">
+    <input pInputText class="input-slg" [(ngModel)]="estimatedValue" />
+  </div>
+  <app-slider
+    [min]="[1]"
+    [max]="[2000000]"
+    [unit]="'$'"
+    [incrementer]="10000"
+    (valueChange)="updateValue($event)"
+  ></app-slider>
+  <div>
+    <button
+      class="btn btn-slg-primary"
+      (click)="
+        ui.routeGoTo('/refinance/borrow-cash', {
+          estimatedHomeValue: intValue
+        })
+      "
+    >
+      Continue
+    </button>
+  </div>
+</div>

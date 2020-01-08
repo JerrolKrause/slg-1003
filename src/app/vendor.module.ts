@@ -26,6 +26,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { ToastModule } from 'primeng/toast';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { InputTextModule } from 'primeng/inputtext';
+import { SliderModule } from 'primeng/slider';
 
 const modules = [
   // Prime NG UI Lib
@@ -38,6 +39,7 @@ const modules = [
   DynamicDialogModule,
   CardModule,
   InputTextModule,
+  SliderModule,
 
   MessagesModule,
   MessageModule,

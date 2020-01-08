@@ -1,0 +1,17 @@
+<h1 class="slide-title">ZIP code of the property</h1>
+<div class="ui-container text-center">
+  <div class="mb-5">
+    <input type="text" [(ngModel)]="zipCode" pInputText class="input-slg" />
+
+  </div>
+  <div>
+    <button
+      class="btn btn-slg-primary"
+      (click)="
+        ui.routeGoTo('/refinance/property-price', { propertyZip: zipCode })
+      "
+    >
+      Continue
+    </button>
+  </div>
+</div>

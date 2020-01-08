@@ -1,1 +1,22 @@
-<p>name works!</p>
+<h1 class="slide-title">What is your name?</h1>
+<div class="ui-container text-center">
+  <div class="mb-5">
+    <p class="input-label">First Name</p>
+    <input pInputText class="input-slg" [(ngModel)]="firstName" />
+    <p class="input-label">Last Name</p>
+    <input pInputText class="input-slg" [(ngModel)]="lastName" />
+  </div>
+  <div>
+    <button
+      class="btn btn-slg-primary"
+      (click)="
+        ui.routeGoTo('/purchase/email', {
+          firstName: firstName,
+          lastName: lastName
+        })
+      "
+    >
+      Continue
+    </button>
+  </div>
+</div>

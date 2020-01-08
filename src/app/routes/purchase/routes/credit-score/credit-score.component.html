@@ -1,1 +1,29 @@
-<p>credit-score works!</p>
+<h1 class="slide-title">Estimate your credit score</h1>
+<div class="ui-container vertical">
+  <!-- <div class="vertical-btn-container"> -->
+  <button
+    class="btn btn-slg-secondary"
+    (click)="ui.routeGoTo('/purchase/military', { creditProfile: 'Excellent' })"
+  >
+    Excellent ≥720
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="ui.routeGoTo('/purchase/military', { creditProfile: 'Good' })"
+  >
+    Good 680 - 719
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="ui.routeGoTo('/purchase/military', { creditProfile: 'Fair' })"
+  >
+    Fair 640-679
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="ui.routeGoTo('/purchase/military', { creditProfile: 'Poor' })"
+  >
+    Poor ≤639
+  </button>
+  <!-- </div> -->
+</div>

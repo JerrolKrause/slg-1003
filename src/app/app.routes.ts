@@ -6,7 +6,7 @@ import { AuthGuard } from '$shared';
 
 export const ROUTES: Routes = [
   // Routes without masterpage or that do not need to be authenticated need to go first
-  
+
   // Example route param
   // {
   //  path: 'loan/:LNKey',
@@ -52,7 +52,9 @@ export const ROUTES: Routes = [
       {
         path: 'refinance',
         loadChildren: () =>
-          import('./routes/refinance/route.module').then(m => m.RefinanceModule),
+          import('./routes/refinance/route.module').then(
+            m => m.RefinanceModule,
+          ),
         canActivate: [AuthGuard],
       },
 

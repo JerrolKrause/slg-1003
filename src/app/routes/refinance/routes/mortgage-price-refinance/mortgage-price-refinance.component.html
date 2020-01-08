@@ -1,0 +1,26 @@
+<h1 class="slide-title">What is the remaining 1st mortgage balance?</h1>
+<div class="ui-container text-center">
+  <div class="mb-5">
+    <input pInputText class="input-slg" [(ngModel)]="estimatedValue" />
+  </div>
+  <app-slider
+    [min]="[1]"
+    [max]="[2000000]"
+    [unit]="'$'"
+    [incrementer]="10000"
+    (valueChange)="updateValue($event)"
+  ></app-slider>
+
+  <div>
+    <button
+      class="btn btn-slg-primary"
+      (click)="
+        ui.routeGoTo('/refinance/second-mortgage', {
+          propertyValueEstimate: estimatedValue
+        })
+      "
+    >
+      Continue
+    </button>
+  </div>
+</div>

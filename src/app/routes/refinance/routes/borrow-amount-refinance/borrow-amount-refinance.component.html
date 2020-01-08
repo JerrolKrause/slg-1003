@@ -1,0 +1,23 @@
+<h1 class="slide-title">How much would you like to borrow?</h1>
+<div class="ui-container text-center">
+  <div class="mb-5">
+    <input disabled pInputText class="input-slg" [(ngModel)]="estimatedValue" />
+  </div>
+  <app-slider
+    [min]="[0]"
+    [max]="[85000]"
+    [incrementer]="5000"
+    [unit]="'$'"
+    (valueChange)="updateValue($event)"
+  ></app-slider>
+  <div>
+    <button
+      class="btn btn-slg-primary"
+      (click)="
+        ui.routeGoTo('/refinance/credit-score', { loanAmount: borrowAmount })
+      "
+    >
+      Continue
+    </button>
+  </div>
+</div>

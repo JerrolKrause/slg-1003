@@ -50,7 +50,6 @@ export class NavComponent {
     //   icon: 'fa fa-cubes mr-1',
     //   routerLink: '/refinance',
     // },
-
   ];
 
   public utilityMenu: MenuItem[] = [

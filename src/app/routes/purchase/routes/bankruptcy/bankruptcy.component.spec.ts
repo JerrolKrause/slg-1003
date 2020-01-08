@@ -8,9 +8,8 @@ describe('BankruptcyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BankruptcyComponent ]
-    })
-    .compileComponents();
+      declarations: [BankruptcyComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,1 +1,30 @@
-<p>purchase-timeline works!</p>
+<h1 class="slide-title">When do you plan to buy a home?</h1>
+<h2 class="slide-subtitle">Please select an option below.</h2>
+<div class="ui-container vertical">
+  <button class="btn btn-slg-secondary" (click)="
+      ui.routeGoTo('/purchase/down-payment', { PurchaseTimeline: 'Contract' })
+    ">
+    Already under contract
+  </button>
+  <button class="btn btn-slg-secondary" (click)="
+      ui.routeGoTo('/purchase/down-payment',  {PurchaseTimeline: 'Immediately'
+      })
+    ">
+    Immediately - I'm making an offer
+  </button>
+  <button class="btn btn-slg-secondary" (click)="
+      ui.routeGoTo('/purchase/down-payment', {PurchaseTimeline: 'Shopping' })
+    ">
+    I'm shopping & am considering a few options
+  </button>
+  <button class="btn btn-slg-secondary" (click)="
+      ui.routeGoTo('/purchase/down-payment', {PurchaseTimeline: 'Soon' })
+    ">
+    Within next couple months
+  </button>
+  <button class="btn btn-slg-secondary" (click)="
+      ui.routeGoTo('/purchase/down-payment', {PurchaseTimeline: 'Not sure'})
+    ">
+    Not sure - I want to know what I can afford
+  </button>
+</div>

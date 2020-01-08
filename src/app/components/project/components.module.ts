@@ -15,6 +15,7 @@ import { LayoutMainComponent } from './masterpage/main/layout-main.component';
 import { LayoutSingleComponent } from './masterpage/single/layout-single.component';
 import { NavComponent } from './masterpage/nav/nav.component';
 import { NavSearchComponent } from './masterpage/nav/search/nav-search.component';
+import { SliderComponent } from './slider/slider.component';
 
 // Modals include
 const APP_MODALS = [LogoutModalComponent, FeedbackModalComponent];
@@ -28,6 +29,7 @@ export const APP_COMPONENTS = [
   LayoutSingleComponent,
   NavComponent,
   NavSearchComponent,
+  SliderComponent,
 ];
 
 @NgModule({

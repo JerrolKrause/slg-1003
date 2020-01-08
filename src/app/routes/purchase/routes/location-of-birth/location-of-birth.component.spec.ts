@@ -8,9 +8,8 @@ describe('LocationOfBirthComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LocationOfBirthComponent ]
-    })
-    .compileComponents();
+      declarations: [LocationOfBirthComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

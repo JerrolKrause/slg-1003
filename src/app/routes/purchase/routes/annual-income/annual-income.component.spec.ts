@@ -8,9 +8,8 @@ describe('AnnualIncomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AnnualIncomeComponent ]
-    })
-    .compileComponents();
+      declarations: [AnnualIncomeComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

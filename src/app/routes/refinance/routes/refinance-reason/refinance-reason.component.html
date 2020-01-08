@@ -1,0 +1,54 @@
+<h1 class="slide-title">Why do you want to refinance?</h1>
+<h2 class="slide-subtitle">Please select a reason below.</h2>
+<div class="ui-container vertical">
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/refinance/zip-code', {
+        loanPurpose: 'Loewr my monthly payment'
+      })
+    "
+  >
+    Lower my monthly payment
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/refinance/zip-code', {
+        loanPurpose: 'Pay off mortgage faster'
+      })
+    "
+  >
+    Pay off mortgage faster
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/refinance/zip-code', {
+        loanPurpose: 'Take cash out of home'
+      })
+    "
+  >
+    Take cash out of home
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/refinance/zip-code', {
+        loanPurpose: 'Change my ARM loan to be fixed'
+      })
+    "
+  >
+    Change my ARM loan to be Fixed
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/refinance/zip-code', {
+        loanPurpose: 'Browser current mortgage rates'
+      })
+    "
+  >
+    Browse current mortgage rates
+  </button>
+</div>

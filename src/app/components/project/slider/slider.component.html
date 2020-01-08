@@ -1,0 +1,18 @@
+<div class="slider-container-slg">
+  <p-slider
+    class="custom-slider"
+    [step]="incrementer"
+    [min]="min[0]"
+    [max]="max[0]"
+    (onChange)="handleChange($event)"
+    [(ngModel)]="estimatedValue"
+  ></p-slider>
+  <div class="d-flex bd-highlight">
+    <div class="mr-auto p-2 bd-highlight">
+      <strong class="bold-text">{{ minString }}</strong>
+    </div>
+    <div class="p-2 bd-highlight">
+      <strong class="bold-text">{{ maxString }}</strong>
+    </div>
+  </div>
+</div>

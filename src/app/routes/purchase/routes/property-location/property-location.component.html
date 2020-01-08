@@ -1,1 +1,29 @@
-<p>property-location works!</p>
+<h1 class="slide-title">In what city will the property be located?</h1>
+<div class="ui-container text-center">
+  <div class="mb-5">
+    <p class="input-label">Address</p>
+    <input type="text" [(ngModel)]="address" pInputText class="input-slg" />
+    <p class="input-label">City</p>
+    <input type="text" [(ngModel)]="city" pInputText class="input-slg" />
+    <p class="input-label">State</p>
+    <input type="text" [(ngModel)]="state" pInputText class="input-slg" />
+    <p class="input-label">Zip</p>
+    <input type="text" [(ngModel)]="zip" pInputText class="input-slg" />
+    <p class="input-label">County</p>
+    <input type="text" [(ngModel)]="county" pInputText class="input-slg" />
+  </div>
+  <button
+    class="btn btn-slg-primary"
+    (click)="
+      ui.routeGoTo('/purchase/purchase-timeline', {
+        propertyAddress: address,
+        propertyCity: city,
+        propertyState: state,
+        propertyZip: zip,
+        propertyCounty: county
+      })
+    "
+  >
+    Continue
+  </button>
+</div>

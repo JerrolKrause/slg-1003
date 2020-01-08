@@ -1,1 +1,19 @@
-<p>first-time works!</p>
+<h1 class="slide-title">Is this your first time buying a home?</h1>
+<div class="ui-container text-center">
+  <div class="btn-group">
+    <button
+      class="btn btn-slg ml-2"
+      (click)="ui.routeGoTo('/purchase/employment', { FirstTimeHomeBuyer: 'yes' })"
+    >
+      <i class="pi pi-check icon check"></i>
+      <span>Yes</span>
+    </button>
+    <button
+      class="btn btn-slg"
+      (click)="ui.routeGoTo('/purchase/employment', { FirstTimeHomeBuyer: 'no' })"
+    >
+      <i class="pi pi-times icon close"></i>
+      <span>No</span>
+    </button>
+  </div>
+</div>

@@ -8,9 +8,8 @@ describe('RealEstateAgentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RealEstateAgentComponent ]
-    })
-    .compileComponents();
+      declarations: [RealEstateAgentComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

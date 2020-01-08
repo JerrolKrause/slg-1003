@@ -8,9 +8,8 @@ describe('PurchaseTimelineComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PurchaseTimelineComponent ]
-    })
-    .compileComponents();
+      declarations: [PurchaseTimelineComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

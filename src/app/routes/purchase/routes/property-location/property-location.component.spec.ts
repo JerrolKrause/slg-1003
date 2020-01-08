@@ -8,9 +8,8 @@ describe('PropertyLocationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PropertyLocationComponent ]
-    })
-    .compileComponents();
+      declarations: [PropertyLocationComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

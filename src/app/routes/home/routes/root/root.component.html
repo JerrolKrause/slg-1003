@@ -1,23 +1,23 @@
 <h1 class="slide-title">Which type of home loan are you interested in?</h1>
 <div class="ui-container text-center">
   <div class="btn-group">
-    <button class="btn btn-slg ml-2" (click)="ui.routeGoTo('/purchase/property-type', { loanType: 'Purchase'})">
-      <img src="assets/icons/purchase.png"/>
+    <button
+      class="btn btn-slg ml-2"
+      (click)="
+        ui.routeGoTo('/purchase/property-type', { loanType: 'Purchase' })
+      "
+    >
+      <img src="assets/icons/purchase.png" />
       <span>Purchase</span>
     </button>
-    <button class="btn btn-slg">
-      <img src="assets/icons/purchase.png"/>
+    <button
+      class="btn btn-slg"
+      (click)="
+        ui.routeGoTo('/refinance/property-type', { loanType: 'Refinance' })
+      "
+    >
+      <img src="assets/icons/purchase.png" />
       <span>Refinance</span>
     </button>
-  </div>
-</div>
-
-<h1 class="slide-title">What is your current street address?</h1>
-<div class="ui-container text-center">
-  <div class="mb-5">
-    <input type="text" pInputText class="input-slg" [(ngModel)]="address" />
-  </div>
-  <div>
-    <button class="btn btn-slg-primary"(click)="ui.routeGoTo('/purchase/property-type', { address: address})">Continue</button>
   </div>
 </div>

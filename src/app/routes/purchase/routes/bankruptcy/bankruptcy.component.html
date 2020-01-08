@@ -1,1 +1,33 @@
-<p>bankruptcy works!</p>
+<h1 class="slide-title">
+  Have you had a bankruptcy or foreclosure in the last 7 years?
+</h1>
+<div class="ui-container vertical">
+  <button
+    class="btn btn-slg-secondary"
+    (click)="ui.routeGoTo('/purchase/current-address', { bankruptcy: 'No' })"
+  >
+    No
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/purchase/current-address', { bankruptcy: 'Bankruptcy' })
+    "
+  >
+    Bankruptcy
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/purchase/current-address', { bankruptcy: 'Foreclosure' })
+    "
+  >
+    Foreclosure
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="ui.routeGoTo('/purchase/current-address', { bankruptcy: 'Both' })"
+  >
+    Both
+  </button>
+</div>

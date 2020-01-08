@@ -29,13 +29,37 @@ export class UiStateService {
   );
 
   public form1003 = this.fb.group({
-    loanType: null,
-    email: null,
-    nameFirst: null,
-    nameLast: null,
-    propertyUsage: null,
-    propertyType: null,
-    address:null
+    loanType: null, //string
+    email: null, //string
+    phone1: null, //string
+    firstName: null, //string
+    lastName: null, //string
+    propertyUse: null, //string
+    propertyType: null, //string
+    propertyAddress: null,
+    propertyCity: null,
+    propertyState: null,
+    propertyZip: null,
+    propertyCounty: null,
+    mailingAddress: null,
+    mailingCity: null,
+    mailingState: null,
+    mailingZip: null,
+    mailingCounty: null,
+    propertyValue: null, //number
+    estimatedHomeValue: null,
+    occupancyType: null, //boolean
+    creditProfile: null, //string
+    isMilitary: null,
+    bankruptcy: null,
+    loanAmount: null,
+    loanPurpose: null,
+    // Notes fields
+    notes: null,
+    PurchaseTimeline: null,
+    DownPayment: null,
+    FirstTimeHomeBuyer: null,
+    Loan: null
   });
 
   public progressPercent$ = this.query
@@ -78,6 +102,27 @@ export class UiStateService {
         distinctUntilChanged(),
       );
 
+  // /** Load form data of current path variable */
+  // public loadValue$ = this.query
+  //   .select(state => state.currentPathVariable)
+  //   .pipe(
+  //     map(path => {
+  //       let pathVar = path.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase())
+  //       if(pathVar === 'name') {
+  //         if(this.form1003.value.hasOwnProperty('nameFirst')) {
+  //           return {
+  //             first: this.form1003.value.nameFirst,
+  //             last: this.form1003.value.nameLast
+  //           }
+  //         }
+  //       }
+  //       if(this.form1003.value.hasOwnProperty(pathVar)) {
+  //           return this.form1003.value[pathVar]
+  //       }
+  //     }),
+  //     startWith(0),
+  //     distinctUntilChanged(),
+  //   );
   constructor(
     private store: UiStateStore,
     private query: UiStateQuery,
@@ -98,14 +143,27 @@ export class UiStateService {
       .pipe(debounceTime(500))
       .subscribe(form => this.toggles('form', form));
 
-      // Rehydrate the form with any saved data
+    // Rehydrate the form with any saved data
     this.query
       .select()
       .pipe(take(1))
       .subscribe(state => this.form1003.patchValue(state.formData));
 
-    this.query.select().subscribe(res => console.log(res));
+    this.query.select().subscribe(res => console.log(res.formData));
   }
+
+  //  /**
+  //  * Set active route for loading
+  //  * @param route
+  //  */
+  // public setPathVariable(route: string) {
+  //   this.store.update(store => {
+  //     return {
+  //       ...store,
+  //       currentPathVariable: route
+  //     }
+  //   })
+  // }
 
   /**
    * Go to the next route
@@ -114,6 +172,8 @@ export class UiStateService {
    */
   public routeGoTo(route: string, formData: Record<string, any> = {}) {
     // Update form data
+    console.log(formData)
+    
     this.form1003.patchValue(formData);
     // Update the store properties
     this.store.update(store => {
@@ -155,16 +215,35 @@ export class UiStateService {
     });
   }
 
+
   /**
    * Submit a lead to the backend
    * @param lead
    */
-  public leadSubmit(lead: any) {
-    this.http.post('/api/somewhere', lead).subscribe(() => {
-      this.form1003.reset();
-      window.location.href = '/?src=1003';
-    });
-  }
+  public leadSubmit(formData: Record<string, any> = {}, lead?: any) {
+    this.form1003.patchValue(formData);
+    let noteString = ''
+      let keys = Object.keys(this.form1003.value)
+      keys.forEach((key:string) => {
+        // If Notes, convert object into string
+        if(key.charAt(0) === key.charAt(0).toUpperCase() ) {
+          // convert camelCase to Camel Case for readability
+          let keyTitle = key.replace(/([A-Z]+)*([A-Z][a-z])/g, "$1 $2")
+          noteString += (`${keyTitle}: ${this.form1003.value[key]},\n`)
+          this.form1003.removeControl(key)
+        }
+      })
+      // Add note string to form
+      this.form1003.patchValue({notes: noteString})
+      console.log(this.form1003.value)
+      this.http
+      .post('/api/somewhere', lead, this.form1003.value)
+      .subscribe(() => {
+        this.form1003.reset();
+        window.location.href = '/?src=1003';
+      });
+    }
+   
 
   /**
    * A generic dictionary for simple key/value pair state changes

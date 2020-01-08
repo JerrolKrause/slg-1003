@@ -1,1 +1,24 @@
-<p>down-payment works!</p>
+<h1 class="slide-title">How much are you putting down as a down payment?</h1>
+<div class="ui-container text-center">
+  <div class="mb-5">
+    <input pInputText class="input-slg" [(ngModel)]="downPaymentValue" />
+  </div>
+  <app-slider
+    [min]="[0, 10]"
+    [max]="[91, 100]"
+    [unit]="'%'"
+    [incrementer]="10"
+    (valueChange)="updateValue($event)"
+  ></app-slider>
+
+  <div>
+    <button
+      class="btn btn-slg-primary"
+      (click)="
+        ui.routeGoTo('/purchase/first-time',  {DownPayment: downPaymentValue })
+      "
+    >
+      Continue
+    </button>
+  </div>
+</div>

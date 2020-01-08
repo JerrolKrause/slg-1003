@@ -17,11 +17,11 @@ import {
 import { RouteDomainStateService } from './shared/state/domain';
 import { PropertyTypeComponent } from './routes/property-type/property-type.component';
 import { PropertyUsageComponent } from './routes/property-usage/property-usage.component';
+import { PropertyRefinanceComponent } from './routes/property-refinance/property-refinance.component';
 import { PropertyLocationComponent } from './routes/property-location/property-location.component';
 import { NewHomeComponent } from './routes/new-home/new-home.component';
 import { PurchaseTimelineComponent } from './routes/purchase-timeline/purchase-timeline.component';
 import { RealEstateAgentComponent } from './routes/real-estate-agent/real-estate-agent.component';
-import { PurchasePriceComponent } from './routes/purchase-price/purchase-price.component';
 import { DownPaymentComponent } from './routes/down-payment/down-payment.component';
 import { BankAccountsComponent } from './routes/bank-accounts/bank-accounts.component';
 import { FirstTimeComponent } from './routes/first-time/first-time.component';
@@ -37,7 +37,7 @@ import { NameComponent } from './routes/name/name.component';
 import { EmailComponent } from './routes/email/email.component';
 import { FinalizeComponent } from './routes/finalize/finalize.component';
 
-export const storeName = 'purchase-UIState'; 
+export const storeName = 'purchase-UIState';
 
 @NgModule({
   imports: [CommonModule, SiteModule, routing],
@@ -45,11 +45,11 @@ export const storeName = 'purchase-UIState';
     RootComponent,
     PropertyTypeComponent,
     PropertyUsageComponent,
+    PropertyRefinanceComponent,
     PropertyLocationComponent,
     NewHomeComponent,
     PurchaseTimelineComponent,
     RealEstateAgentComponent,
-    PurchasePriceComponent,
     DownPaymentComponent,
     BankAccountsComponent,
     FirstTimeComponent,

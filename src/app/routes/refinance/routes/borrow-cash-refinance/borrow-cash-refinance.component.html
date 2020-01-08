@@ -1,0 +1,19 @@
+<h1 class="slide-title">Would you like to borrow additional cash?</h1>
+<div class="ui-container text-center">
+  <div class="btn-group">
+    <button
+      class="btn btn-slg ml-2"
+      (click)="ui.routeGoTo('/refinance/borrow-amount', {})"
+    >
+      <i class="pi pi-check icon check"></i>
+      <span>Yes</span>
+    </button>
+    <button
+      class="btn btn-slg"
+      (click)="ui.routeGoTo('/refinance/credit-score', {})"
+    >
+      <i class="pi pi-times icon close"></i>
+      <span>No</span>
+    </button>
+  </div>
+</div>

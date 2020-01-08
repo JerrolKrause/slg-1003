@@ -2,12 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap, catchError, take } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { applyTransaction, EntityState, EntityStore, QueryEntity, StoreConfig } from '@datorama/akita';
+import {
+  applyTransaction,
+  EntityState,
+  EntityStore,
+  QueryEntity,
+  StoreConfig,
+} from '@datorama/akita';
 import { environment } from '$env';
 
 /** Configuration */
 interface StoreState extends EntityState<Models.User> {}
-const url = environment.endpoints.apiUrl + '//jsonplaceholder.typicode.com/users';
+const url =
+  environment.endpoints.apiUrl + '//jsonplaceholder.typicode.com/users';
 const uniqueId = 'id';
 
 /** Store */

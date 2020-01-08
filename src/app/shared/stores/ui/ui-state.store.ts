@@ -8,6 +8,7 @@ export function createInitialState(): UIState {
     formData: {},
     path: [{ path: '/', formProps: null }],
     pageCounter: 0,
+    currentPathVariable: '',
   };
 }
 

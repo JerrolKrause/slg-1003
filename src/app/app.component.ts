@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { map, filter, mergeMap } from 'rxjs/operators';
 
 import { environment } from '$env';
+import { UiStateService } from './shared/stores/ui/ui-state.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,11 +16,11 @@ export class AppComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private title: Title,
+    public ui: UiStateService,
   ) {}
 
   ngOnInit() {
     this.routeChange();
-
   }
 
   /**
@@ -41,6 +42,8 @@ export class AppComponent implements OnInit {
         mergeMap(route => route.data),
       )
       .subscribe(event => {
+        // // Set Path Route for
+        // this.ui.setPathVariable(event.title)
         // Change document title
         this.title.setTitle(
           event['title'] + ' | ' + environment.properties.appName,

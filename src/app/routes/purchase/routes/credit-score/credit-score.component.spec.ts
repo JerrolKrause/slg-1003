@@ -8,9 +8,8 @@ describe('CreditScoreComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreditScoreComponent ]
-    })
-    .compileComponents();
+      declarations: [CreditScoreComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,0 +1,14 @@
+<h1 class="slide-title">Mobile or home phone number</h1>
+<div class="ui-container text-center">
+  <div class="mb-5">
+    <input type="text" [(ngModel)]="number" pInputText class="input-slg" />
+  </div>
+  <div>
+    <button
+      class="btn btn-slg-primary"
+      (click)="ui.leadSubmit({ number: number })"
+    >
+      Submit
+    </button>
+  </div>
+</div>

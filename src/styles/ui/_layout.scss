@@ -12,6 +12,15 @@ body {
   margin: auto;
   padding-right: 15px;
   padding-left: 15px;
+  &.vertical {
+    align-items: center;
+    justify-content: center;
+    margin-left:25%;
+    @media only screen and (max-width: 768px) {
+      margin-left:5%
+
+    }
+  }
 }
 .ui-container-fluid {
   margin: auto;
@@ -19,3 +28,4 @@ body {
   padding-left: 15px;
   width: 100%;
 }
+

@@ -4,4 +4,5 @@ interface UIState {
   formData: Record<string, any>;
   path: { path: string; formProps: string[] | null }[];
   pageCounter: number;
+  currentPathVariable: string;
 }

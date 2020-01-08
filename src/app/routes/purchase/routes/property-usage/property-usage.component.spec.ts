@@ -8,9 +8,8 @@ describe('PropertyUsageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PropertyUsageComponent ]
-    })
-    .compileComponents();
+      declarations: [PropertyUsageComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -23,7 +23,6 @@ import { UiStateService } from '$ui';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RootComponent implements OnInit, OnDestroy {
-
   public address = '';
 
   constructor(public ui: UiStateService) {}

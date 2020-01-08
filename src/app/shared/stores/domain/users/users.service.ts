@@ -2,7 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap, catchError, take } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { applyTransaction, EntityState, EntityStore, QueryEntity, StoreConfig } from '@datorama/akita';
+import {
+  applyTransaction,
+  EntityState,
+  EntityStore,
+  QueryEntity,
+  StoreConfig,
+} from '@datorama/akita';
 
 /** Configuration */
 interface StoreState extends EntityState<Models.User> {}

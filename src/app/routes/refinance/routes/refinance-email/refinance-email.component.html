@@ -1,0 +1,15 @@
+<h1 class="slide-title">What is your email?</h1>
+<h2 class="slide-subtitle">We take your privacy seriously</h2>
+<div class="ui-container text-center">
+  <div class="mb-5">
+    <input type="email" [(ngModel)]="email" pInputText class="input-slg" />
+  </div>
+  <div>
+    <button
+      class="btn btn-slg-primary"
+      (click)="ui.routeGoTo('/refinance/number', { email: email })"
+    >
+      Continue
+    </button>
+  </div>
+</div>

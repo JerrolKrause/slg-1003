@@ -1,1 +1,37 @@
-<p>employment works!</p>
+<h1 class="slide-title">Are you currently employed?</h1>
+<div class="ui-container vertical">
+  <!-- <div class="vertical-btn-container"> -->
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/purchase/credit-score', { occupancyType: 'full-time' })
+    "
+  >
+    Full-time
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/purchase/credit-score', { occupancyType: 'part-time' })
+    "
+  >
+    Part-time
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/purchase/credit-score', { occupancyType: 'self-employed' })
+    "
+  >
+    Self-employed
+  </button>
+  <button
+    class="btn btn-slg-secondary"
+    (click)="
+      ui.routeGoTo('/purchase/credit-score', { occupancyType: 'unemployed' })
+    "
+  >
+    No, I'm not employed
+  </button>
+  <!-- </div> -->
+</div>
