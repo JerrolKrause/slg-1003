@@ -18,7 +18,7 @@ import {
 } from '$services';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class UiStateService {
@@ -132,7 +132,7 @@ export class UiStateService {
     private ntsVersion: NtsVersionManagementService,
     private fb: FormBuilder,
     private router: Router,
-    private http: HttpClient,
+    // private http: HttpClient,
   ) {
     // this.query.uiState$.subscribe(state => console.log('UI STATE', state));
     this.updateAvailable$
@@ -220,7 +220,7 @@ export class UiStateService {
    * Submit a lead to the backend
    * @param lead
    */
-  public leadSubmit(formData: Record<string, any> = {}, lead?: any) {
+  public leadSubmit(formData: Record<string, any> = {}) {
     this.form1003.patchValue(formData);
     let noteString = ''
       let keys = Object.keys(this.form1003.value)
@@ -236,12 +236,14 @@ export class UiStateService {
       // Add note string to form
       this.form1003.patchValue({notes: noteString})
       console.log(this.form1003.value)
-      this.http
-      .post('/api/somewhere', lead, this.form1003.value)
-      .subscribe(() => {
-        this.form1003.reset();
-        window.location.href = '/?src=1003';
-      });
+      // this.http
+      // .post('/api/somewhere', lead, this.form1003.value)
+      // .subscribe(() => {
+      //   this.form1003.reset();
+      //   window.location.href = 'https://www.slgmortgage.com/thank-you/';
+      // });
+              window.location.href = 'https://www.slgmortgage.com/thank-you/';
+
     }
    
 

@@ -54,7 +54,7 @@ export class NavComponent {
 
   public utilityMenu: MenuItem[] = [
     {
-      label: 'Call us at (800) 000-0000',
+      label: 'Call us at 1-800-689-1057',
       // icon: 'fa fa-tachometer mr-1',
       // disabled: true,
     },
