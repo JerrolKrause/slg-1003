@@ -1,5 +1,5 @@
 {
-  "name": "angular-starter",
+  "name": "slg-1003",
   "version": "3.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,7 +17,7 @@
     "build:qa": "ng build --prod --configuration=qa",
     "build:uat": "ng build --prod --configuration=uat",
     "build:prod": "ng build --prod --configuration=production",
-    "deploy": "ng build --prod --base-href /angular-starter/ && angular-cli-ghpages --no-silent --dir=dist/browser",
+    "deploy": "ng build --prod --base-href /slg-1003/ && angular-cli-ghpages --no-silent --dir=dist/browser",
     "gzip": "gzipper --verbose ./dist/browser",
     "docs": "compodoc -p tsconfig.json",
     "docs:serve": "compodoc -p tsconfig.json -s",
