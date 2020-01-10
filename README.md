@@ -1,4 +1,4 @@
-# Angular Starter
+# SLG 1003
 
 A rapid starter project for creating Angular single page apps. Contains Angular, ngPrime, Akita and more. Built with Angular CLI.
 
